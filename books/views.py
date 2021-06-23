@@ -6,8 +6,8 @@ from .models import Book
 
 # Create your views here.
 def homepage(request):
-    if request.user.is_authenticated:
-        return redirect ("list_books")
+    # if request.user.is_authenticated:
+    #     return redirect ("list_books")
     return render(request, "books/homepage.html")
 
 @login_required
