@@ -8,4 +8,7 @@ class BookForm(ModelForm):
         fields = [
             'title', 
             'author',
+            'book_URL',
+            'description',
+            'created_at',
         ]
