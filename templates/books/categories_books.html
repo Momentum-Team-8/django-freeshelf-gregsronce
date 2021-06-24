@@ -2,10 +2,9 @@
 
 {% block content %}
 
-<h1> {{ category.name }} </h1>
+<h1 class="cat_name"> Category: {{ category.name }} </h1>
 {% for book in books %}
-<p>{{ book.title }}</p>
-<p>{{ book.author }}</p>
+<p class="cat_name">Book Title: {{ book.title }}</p>
 {% endfor %}
 
 {% endblock content %}

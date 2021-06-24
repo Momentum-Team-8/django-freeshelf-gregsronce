@@ -4,24 +4,26 @@
 
 <h1 class="page_title">All Books</h1>
 
-{% for book in books %}
 <div class="container"> 
+    {% for book in books %}
         <div class="card">
             {% if book.title %}
                 <p class="book_title"><a href="{{book.book_URL}}" target="_blank">{{book.title}}</a></p> 
-                <p class="book_author">{{book.author}}</p>
+                <p class="book_author">Written By: {{book.author}}</p>
                 <p class="description">{{book.description}}</p>
                 <p class="created_at">added: {{book.created_at}}</p>
+                <button class="favorite_button">Add to Favorties</button>
+                <div> 
+                    <p class="categories"> Categories:
+                        {% for category in book.categories.all %}
+                        <a href="{% url 'categories_books' slug=category.slug %}">{{category.name}}</a> |
+                        {% endfor %}
+                    </p>
+                </div>
             {% endif %}
         </div>
-        <div>
-        <p>
-            
-            {% for category in book.categories.all %}
-            <li><a href="{% url 'categories_books' slug=category.slug %}">{{category.name}}</a></li>
-            {% endfor %}
-        </p>
-        </div>
-</div> 
+
     {% endfor %}
+</div> 
+   
 {% endblock %}

@@ -1,0 +1,8 @@
+.cat_name, .categories, .category, .card {
+    margin: 10px;
+    padding: 5px;
+}
+
+.book_title {
+    font-size: larger;
+}
